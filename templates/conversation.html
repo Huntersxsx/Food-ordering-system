@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> 快乐肥宅 </title>
+    <link rel="shortcut icon" href="..\static\img\ham3.ico" type="image/x-icon" />
+    <link href="../static/css/conver/www.fontorg.com.f1111-cb772b13ebd.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/caiyun/www.fontorg.com.f617-4225e735280.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <style>
+    #table1
+    {
+        background:url(../static/img/background3new.jpg);
+        padding-top:40px;
+    }
+    .button {
+      display: inline-block;
+      padding: 8px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 6px #999;
+    }
+    .button:hover {background-color: #3e8e41}
+    .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+    </style>
+</head>
+<body>
+<table  width="90%" cellpadding="5" cellspacing="0" align="center" >
+    <tr>
+        <td width="200" valign="top"><img src="..\static\img\logo2new.jpg" width="150" height="150"></td>
+        <td valign="top"><h1 align="center"><font style="font-size: 38pt; filter: shadow(color=green); width: 100%;  line-height: 150%; font-family: f617-4225e735280"; color="#8b4513">快乐肥宅点餐系统</font></h1></td>
+    </tr>
+    <tr id=table1>
+        <td width="15%">
+            <h3 style="font-size: 24px">Menu</h3>
+            <ul>
+                <li style="font-size:20px; font-family: KaiTi"> <a href="{{url_for('parse')}}">返回登录界面</a></li>
+            </ul>
+        </td>
+        <td valign="top"; width="65%"><h2 align="center"><div style='font-size: 24pt;color: darkcyan'>Hello, {{user_id}}!</div></h2>
+        <h2 align="center"><div style='font-family: f1111-cb772b13ebd;font-size: 24pt;color: darkcyan'>Welcome to快乐肥宅点餐系统</div></h2>
+            <textarea id="message_history" name="message_history" placeholder="Output message..." rows="18" cols="100" style="text-align:left;overflow:auto; border:1px outset #000000;width:100%;font-size:18px;font-family: KaiTi">
+						{% for msg in output_message %}
+{{ msg }}
+						{% endfor %}
+            </textarea>
+            <script type="text/javascript">document.getElementById("message_history").scrollTop = document.getElementById("message_history").scrollHeight</script>
+
+            <form action="{{url_for('conversation', user_id=user_id)}}" id="user_msg_form" method="post">
+                <input type="text" name="input_message" placeholder="输入消息..." size="100" style="height:80px;width:100%;font-size:18px;font-family: KaiTi" ><br>
+               <input type="submit" style="float: left"  class="button" value="Send">
+            </form>
+            <form action="{{url_for('conversation', user_id=user_id)}}" id="restart-form" method="post">
+                <input type="hidden" name="restart_dialogue" value="true">
+                <input type="submit" style="float: right" class="button" value="Restart">
+            </form>
+        </td>
+        <td valign="left"; width="20%" >
+            <h3  align="left"; style="color: red;font-size: 24px">&emsp;对话提示</h3>
+            <ul style="font-size: 20px; font-family: KaiTi,'楷体','华文楷体',STKaiti; color: darkslateblue">
+                <li>尽量点菜单中所包含的食物</li>
+                <li>点餐时每种食物前要加上需要的数量</li>
+                <li>更换食物种类时把要换的食物放前，要换成的食物放后，支持更换多种食物</li>
+                <li>更改食物数量时支持多种表达方式，如“帮我加一杯可乐”、“帮我把一杯可乐换成两杯”、“给我再来一杯可乐”等，前两种方式支持单种食物，后一种支持更改多种食物数量</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+<hr width="90%" align="left">
+<table align="left">
+    <tr>
+        <td width="15%">
+            <img src="..\static\img\XIAN.jpg" alt="XJTU logo" width="300" height="200">
+        </td>
+        <td width="60%">
+            <address>
+                西安交通大学<br>
+                西安市碑林区咸宁西路28号<br>
+                710049 <br>
+                <a href="http://www.xjtu.edu.cn/" target="_blank">学校主页入口</a>
+            </address>
+            <p>Contact me at <a href="mailto:sx1798868277@stu.xjtu.edu.cn">sx1798868277@stu.xjtu.edu.cn</a> </p>
+        </td>
+        <td>
+            <b>鸣谢：</b><br>
+            <address>
+                上海市云从科技有限公司<br>
+                <a href="http://www.cloudwalk.cn/" target="_blank">公司主页入口</a><br><br>
+                上海交通大学<br>
+                <a href="https://www.sjtu.edu.cn/" target="_blank">学校主页入口</a><br><br>
+            </address>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

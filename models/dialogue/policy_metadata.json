@@ -1,0 +1,117 @@
+{
+  "action_fingerprints": {
+    "action_listen": {
+      "slots": []
+    },
+    "action_ask_order": {
+      "slots": [
+        "order_set",
+        "state",
+        "orderform"
+      ]
+    },
+    "action_check_telephone": {
+      "slots": [
+        "phone",
+        "user_intent"
+      ]
+    },
+    "action_modify_order": {
+      "slots": [
+        "foodnumber",
+        "fastfood",
+        "orderform",
+        "price",
+        "state",
+        "order_set"
+      ]
+    },
+    "action_change_num": {
+      "slots": [
+        "foodnumber",
+        "fastfood",
+        "price"
+      ]
+    },
+    "action_cancel": {
+      "slots": [
+        "fastfood",
+        "foodnumber",
+        "price"
+      ]
+    },
+    "action_total_money": {
+      "slots": [
+        "fastfood",
+        "foodnumber",
+        "price",
+        "orderform"
+      ]
+    },
+    "action_deny_order": {
+      "slots": [
+        "order_set",
+        "phone",
+        "state"
+      ]
+    },
+    "action_restart": {
+      "slots": []
+    },
+    "action_slot_filling": {
+      "slots": [
+        "fastfood",
+        "foodnumber"
+      ]
+    },
+    "action_cal_money": {
+      "slots": [
+        "price"
+      ]
+    },
+    "utter_ask_again": {
+      "slots": []
+    },
+    "action_cancel_order": {
+      "slots": [
+        "order_set",
+        "state",
+        "orderform"
+      ]
+    },
+    "action_urge_order": {
+      "slots": [
+        "state"
+      ]
+    },
+    "action_change_food": {
+      "slots": [
+        "fastfood",
+        "foodnumber",
+        "price"
+      ]
+    },
+    "utter_help": {
+      "slots": []
+    },
+    "utter_goodbye": {
+      "slots": []
+    }
+  },
+  "rasa_core": "0.12.4",
+  "python": "3.6.6",
+  "max_histories": [
+    5,
+    null,
+    5,
+    2
+  ],
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
+  "policy_names": [
+    "rasa_core.policies.keras_policy.KerasPolicy",
+    "rasa_core.policies.fallback.FallbackPolicy",
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "rasa_core.policies.form_policy.FormPolicy"
+  ],
+  "trained_at": "20190425-173642"
+}

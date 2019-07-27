@@ -1,0 +1,119 @@
+<html>
+<head>
+    <title> 快乐肥宅 </title>
+    <link rel="shortcut icon" href="..\static\img\ham3.ico" type="image/x-icon" />
+    <link href="../static/css/welcome/www.fontorg.com.f1479-8c671e196c3.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/kuaile/www.fontorg.com.f1479-d9a5e735280.css" rel="stylesheet" type="text/css"/>
+
+    <meta charset="UTF-8">
+    <script>
+        function IDlogin()
+        {
+        var username=document.getElementById("user_id");
+        var pass=document.getElementById("user_password");
+        if(username.value=="")
+        {
+        alert("请输入用户名");
+        return ;
+        }
+        else if(pass.value=="")
+        {
+        alert("请输入密码");
+        return;
+        }
+        else if((pass.value=="123456")&&(username.value=="孙新"))
+        {
+        login.submit();
+        }
+        else
+        {
+        alert("登录失败，请检查用户名和密码是否有误！");
+        return;
+        }
+        return true;
+        }
+    </script>
+    <style>
+    #table1
+    {
+        background:url(../static/img/hamburger10new.jpg);
+        padding-top:40px;
+        width:35%
+    }
+    #table2
+    {
+        background:url(../static/img/background2new.jpg);
+        padding-top:40px;
+    }
+    .button {
+      display: inline-block;
+      padding: 8px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 6px #999;
+    }
+    .button:hover {background-color: #3e8e41}
+    .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+    </style>
+</head>
+
+<body>
+<table  width="90%" cellpadding="5" cellspacing="0" align="center" >
+    <tr>
+        <td width="200" valign="top"><img src="..\static\img\logo2new.jpg" width="150" height="150"></td>
+    </tr>
+    <tr>
+        <td id='table1'></td>
+        <td id='table2' valign="top"><h1 align="center"><div style='font-family: f1479-8c671e196c3;font-size: 26pt; color:orangered'>WELCOME TO</div></h1>
+            <h1 align="center"><div style='font-family: f1479-d9a5e735280;font-size: 26pt; color:orangered'>快乐肥宅点餐系统</div></h1><br/><br/><br/>
+            <h3 align="center">用户登录</h3>
+            <form name="login" action="{{url_for('parse')}}" id="form_user" method="post">
+                <input type="hidden" name="form_name" value="form_user">
+                <center style="font-family: KaiTi; font-size: 18px">用户名：<input type="text" name="user_id" id="user_id" placeholder="用户名..." size="20" style="height:25px;font-size:15px"></center><br/>
+                <center style="font-family: KaiTi; font-size: 18px">密码：&emsp;<input type="password" name="user_password" id="user_password" placeholder="密码..." size="20" style="height:25px;font-size:15px"></center><br/><br/>
+                <center>&emsp;&emsp; <input type="button" class="button" value="Login" onclick="IDlogin()">&emsp;&emsp;<input type="reset" class="button" value="Reset" ></center>
+
+            </form>
+        </td>
+        <td id='table1'></td>
+    </tr>
+</table>
+<hr width="90%" align="left">
+<table align="left">
+    <tr>
+        <td width="15%">
+            <img src="..\static\img\XIAN.jpg" alt="XJTU logo" width="300" height="200">
+        </td>
+        <td width="60%">
+            <address>
+                西安交通大学<br>
+                西安市碑林区咸宁西路28号<br>
+                710049 <br>
+                <a href="http://www.xjtu.edu.cn/ " target="_blank">学校主页入口</a>
+            </address>
+            <p>Contact me at <a href="mailto:sx1798868277@stu.xjtu.edu.cn">sx1798868277@stu.xjtu.edu.cn</a> </p>
+        </td>
+        <td>
+            <b>鸣谢：</b><br>
+            <address>
+                上海市云从科技有限公司<br>
+                <a href="http://www.cloudwalk.cn/" target="_blank">公司主页入口</a><br><br>
+                上海交通大学<br>
+                <a href="https://www.sjtu.edu.cn/" target="_blank">学校主页入口</a><br><br>
+            </address>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

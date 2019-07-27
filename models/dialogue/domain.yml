@@ -1,0 +1,134 @@
+%YAML 1.1
+---
+actions:
+- action_again
+- action_greet
+- action_cancel
+- action_cancel_order
+- utter_default
+- action_show_menu
+- action_ask_order
+- action_answer
+- utter_ask_again
+- action_slot_filling
+- action_urge_order
+- utter_help
+- utter_bless
+- utter_goodbye
+- utter_greet
+- utter_wait
+- action_change_num
+- utter_ask_kind
+- action_check_telephone
+- action_deny_order
+- action_change_food
+- action_modify_order
+- action_total_money
+- action_cal_money
+config:
+  store_entities_as_slots: true
+entities:
+- food
+- change
+- number
+- ordinal
+forms: []
+intents:
+- kind_answer:
+    use_entities: true
+- greet:
+    use_entities: true
+- ask_order:
+    use_entities: true
+- telephone_number:
+    use_entities: true
+- deny:
+    use_entities: true
+- order_confirm:
+    use_entities: true
+- modify_order:
+    use_entities: true
+- modify_num:
+    use_entities: true
+- order_cancel:
+    use_entities: true
+- urge_order:
+    use_entities: true
+- modify_answer:
+    use_entities: true
+- cancel_answer:
+    use_entities: true
+- order_answer:
+    use_entities: true
+- order_meal:
+    use_entities: true
+- other:
+    use_entities: true
+- pardon:
+    use_entities: true
+- cancel:
+    use_entities: true
+- modify_food:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- None:
+    use_entities: true
+slots:
+  fastfood:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.ListSlot
+  foodnumber:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.ListSlot
+  order_set:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.ListSlot
+  order_state:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.ListSlot
+  orderform:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.ListSlot
+  phone:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  price:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  state:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  user_intent:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_ask_again:
+  - text: 请问还有什么可以帮助您的吗？
+  utter_ask_kind:
+  - text: 您好，这是我们的菜单，请问您需要什么呢？
+  utter_bless:
+  - text: 祝您用餐愉快。
+  utter_default:
+  - text: 不好意思，我没能听懂您的意思，请问可以换一种方式再说一遍您的需求吗？
+  utter_goodbye:
+  - text: 再见。
+  - text: bye bye。
+  - text: bye, 为您服务很愉快。
+  - text: 慢走, 一路顺风。
+  utter_greet:
+  - text: 您好!
+  utter_help:
+  - text: 请问有什么可以帮助您的吗？
+  - text: 请问有什么需要帮助的吗？
+  utter_wait:
+  - text: 请您先入座，稍等我们会给您上餐。
